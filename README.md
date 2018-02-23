@@ -21,6 +21,9 @@ The method is particularly adapted to compute the "similarity" between users in 
 - p is the number of threads to use (nearly optimal degree of parallelism)
 - net.txt is the input directed graph "source target" on each line. Node's IDs should be integers, preferably from 0 to n-1.
 
+It will print values in the terminal to plot a histogram with 0.1 bucketsize.   
+The code can be modified for any other wished output, such as each pair of nodes with the similarity larger than a threshold (the output consisting of all pairs of nodes with nonzero similarity might be too large and not so useful).
+
 If the program does not scale, because there are too many hubs (i.e. nodes with a very high in-degree), then just remove links to hubs with the following command.
 
 ./clean max_in-degree neti.txt neto.txt
