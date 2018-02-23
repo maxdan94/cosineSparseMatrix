@@ -17,7 +17,8 @@ gcc clean.c -O9 -o clean
 
 ## To execute:
 
-./cosinemat net.txt
+./cosinemat p net.txt
+- p is the number of threads to use (nearly optimal degree of parallelism)
 - net.txt is the input directed graph "source target" on each line. Node's IDs should be integers, preferably from 0 to n-1.
 
 If the program does not scale, because there are too many hubs (i.e. nodes with a very high in-degree), then just remove links to hubs with the following command.
