@@ -12,8 +12,8 @@ The method is particularly adapted to compute the "similarity" between users in 
 
 ## To compile:
 
-gcc cosinemat.c -O9 -o cosinemat -lm -fopenmp 
-gcc clean.c -O9 -o clean
+- gcc cosinemat.c -O9 -o cosinemat -lm -fopenmp 
+- gcc clean.c -O9 -o clean
 
 ## To execute:
 
