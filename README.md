@@ -23,7 +23,7 @@ The method is particularly adapted to compute the "similarity" between users in 
 
 It will print values in the terminal to plot a histogram with 0.1 bucketsize.   
 
-## Modificataion:
+## Modification:
 
 The code can be modified for any other wished output, such as each pair of nodes with the similarity larger than a threshold (the output consisting of all pairs of nodes with nonzero similarity might be too large and not so useful).
 
