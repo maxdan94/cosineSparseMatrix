@@ -44,8 +44,7 @@ On a commodity machine using a single thread and without removing hubs' edges:
 ## Reference:
 
 The program is an alternative to the MapReduce method presented in "When hashes met wedges: A distributed algorithm for finding high similarity vectors. Sharma, Seshadhri and Goel. WWW2017".  
-https://papers-gamma.link/static/memory/pdfs/23-p431.pdf
-
+https://papers-gamma.link/paper/23/When%20Hashes%20Met%20Wedges:%20A%20Distributed%20Algorithm%20for%20Finding%20High%20Similarity%20Vectors#review
 
 ## Initial contributors:
 
