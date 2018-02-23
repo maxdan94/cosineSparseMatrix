@@ -27,6 +27,7 @@ The code can be modified for any other wished output, such as each pair of nodes
 If the program does not scale, because there are too many nodes with a very high out-degree (or in-degree), then just remove out-links from these out-hubs (and/or in-links from these in-hubs) with the following command.
 
 ./clean max_in-degree max_out-degree neti.txt neto.txt
+
 - max_in-degree is the maximum allowed in-degree. For instance 10,000. Use -1 to set it to infinity.
 - max_out-degree is the maximum allowed out-degree. For instance 100,000. Use -1 to set it to infinity.
 - neti.txt is the input directed graph: "source target" on each line. node's IDs should be integer, preferably from 0 to n-1.
