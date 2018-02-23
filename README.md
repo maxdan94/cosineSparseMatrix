@@ -1,6 +1,6 @@
 ## Info:
 
-The program computes the cosine similarity between each pair of nodes in very large directed graphs.
+This C program computes the cosine similarity between each pair of nodes in very large directed graphs.
 
 The cosine similarity between nodes $u$ and $v$ is defined as 
 $$\frac{|\Delta^i(u) \cap \Delta^i(v)|}{\sqrt{|Delta^i(u)|\cdot |Delta^i(v)|}},$$ 
