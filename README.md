@@ -25,7 +25,7 @@ It will print values in the terminal to plot a histogram with 0.1 bucketsize.
 
 ## Modification:
 
-The code can be modified for any other wished output, such as each pair of nodes with the similarity larger than a threshold (the output consisting of all pairs of nodes with nonzero similarity might be too large and not so useful).
+The code can be modified to obtain any other wished output, such as each pair of nodes with the similarity larger than a threshold (the output consisting of all pairs of nodes with nonzero similarity might be too large and not so useful).
 
 The code can be modified to compute any similarity bettween nodes $u$ and $v$ of the form  
 $$f(|\Delta^i(u)|,|\Delta^i(v)|, |\Delta^i(u)\cup \Delta^i(v)|, |\Delta^i(u)\cap \Delta^i(v)|).$$  
