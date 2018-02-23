@@ -31,6 +31,13 @@ If the program does not scale, because there are too many hubs (i.e. nodes with 
 - neti.txt is the input directed graph: "source target" on each line. node's IDs should be integer, preferably from 0 to n-1.
 - neto.txt is the output directed graph: (with links to hubs removed).
 
+## Performance:
+On a commodity machine using a single threads and without removing hubs:
+- http://snap.stanford.edu/data/cit-Patents.html (16M edges): 30 seconds
+- http://snap.stanford.edu/data/soc-LiveJournal1.html (69M edges): 15 minutes
+
+
+
 ## Reference:
 
 The program is an alternative to the MapReduce method presented in "When hashes met wedges: A distributed algorithm for finding high similarity vectors. Sharma, Seshadhri and Goel. WWW2017".  
