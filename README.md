@@ -30,7 +30,7 @@ If the program does not scale, because there are too many hubs (i.e. nodes with 
 
 ## Reference:
 
-The program is an alternative to the MapReduce method presented in "When hashes met wedges: A distributed algorithm for finding high similarity vectors. Sharma, Seshadhri and Goel. WWW2017". 
+The program is an alternative to the MapReduce method presented in "When hashes met wedges: A distributed algorithm for finding high similarity vectors. Sharma, Seshadhri and Goel. WWW2017".  
 https://papers-gamma.link/static/memory/pdfs/23-p431.pdf
 
 
