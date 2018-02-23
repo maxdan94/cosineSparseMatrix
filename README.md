@@ -22,7 +22,20 @@ The method is particularly adapted to compute the "similarity" between users in 
 - net.txt is the input directed graph "source target" on each line. Node's IDs should be integers, preferably from 0 to n-1.
 
 It will print values in the terminal to plot a histogram with 0.1 bucketsize.   
+
+## Modificataion:
+
 The code can be modified for any other wished output, such as each pair of nodes with the similarity larger than a threshold (the output consisting of all pairs of nodes with nonzero similarity might be too large and not so useful).
+
+The code can be modified to compute any similarity bettween nodes $u$ and $v$ of the form  
+$$f(|\Delta^i(u)|,|\Delta^i(v)|, |\Delta^i(u)\cup \Delta^i(v)|, |\Delta^i(u)\cap \Delta^i(v)|).$$  
+Such as:
+- Jaccard: $\frac{|\Delta^i(u)\cap \Delta^i(v)|}{|\Delta^i(u)\cup \Delta^i(v)|}$
+- F1: $2\cdot \frac{|\Delta^i(u)\cap \Delta^i(v)|}{|\Delta^i(u)|+|\Delta^i(v)|}$
+
+Adammic-Adar is also possible: https://it.wikipedia.org/wiki/Coefficiente_Adamic/Adar
+
+## Scalability:
 
 If the program does not scale, because there are too many nodes with a very high out-degree (or in-degree), then just remove out-links from these out-hubs (and/or in-links from these in-hubs) with the following command.
 
