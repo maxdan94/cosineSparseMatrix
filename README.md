@@ -19,9 +19,17 @@ The method is particularly adapted to compute the "similarity" between users in 
 
 ./cosinemat p net.txt
 - p is the number of threads to use (nearly optimal degree of parallelism)
-- net.txt is the input directed graph "source target" on each line. Node's IDs should be integers, preferably from 0 to n-1.
+- net.txt is the input directed graph "source target" on each line. Node's IDs should be integers, preferably from 0 to n-1.  
+It will print values in the terminal to plot a histogram with 0.1 bucketsize.
 
-It will print values in the terminal to plot a histogram with 0.1 bucketsize.   
+If the program does not scale, because there are too many nodes with a very high out-degree (or in-degree), then just remove out-links from these out-hubs (and/or in-links from these in-hubs) with the following command.
+
+./clean max_in-degree max_out-degree neti.txt neto.txt
+
+- max_in-degree is the maximum allowed in-degree. For instance 10,000. Use -1 to set it to infinity.
+- max_out-degree is the maximum allowed out-degree. For instance 100,000. Use -1 to set it to infinity.
+- neti.txt is the input directed graph: "source target" on each line. node's IDs should be integer, preferably from 0 to n-1.
+- neto.txt is the output directed graph: (with links to hubs removed).
 
 ## Modification:
 
@@ -35,16 +43,6 @@ Such as:
 
 Adammic-Adar is also possible: https://it.wikipedia.org/wiki/Coefficiente_Adamic/Adar
 
-## Scalability:
-
-If the program does not scale, because there are too many nodes with a very high out-degree (or in-degree), then just remove out-links from these out-hubs (and/or in-links from these in-hubs) with the following command.
-
-./clean max_in-degree max_out-degree neti.txt neto.txt
-
-- max_in-degree is the maximum allowed in-degree. For instance 10,000. Use -1 to set it to infinity.
-- max_out-degree is the maximum allowed out-degree. For instance 100,000. Use -1 to set it to infinity.
-- neti.txt is the input directed graph: "source target" on each line. node's IDs should be integer, preferably from 0 to n-1.
-- neto.txt is the output directed graph: (with links to hubs removed).
 
 ## Performance:
 On a commodity machine using a single thread and without removing hubs' edges:
