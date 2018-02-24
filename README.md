@@ -41,7 +41,7 @@ Such as:
 - Jaccard: $\frac{|\Delta^i(u)\cap \Delta^i(v)|}{|\Delta^i(u)\cup \Delta^i(v)|}$
 - F1: $2\cdot \frac{|\Delta^i(u)\cap \Delta^i(v)|}{|\Delta^i(u)|+|\Delta^i(v)|}$
 
-Adammic-Adar is also possible: https://it.wikipedia.org/wiki/Coefficiente_Adamic/Adar
+Computing Adammic-Adar is also possible: https://it.wikipedia.org/wiki/Coefficiente_Adamic/Adar
 
 
 ## Performance:
