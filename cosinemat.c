@@ -123,53 +123,48 @@ unsigned long long* cosine(digraph *g){
 	unsigned i,j,k,u,v,w,n;
 	double val;
 	unsigned long long *hist_p,*hist=calloc(10,sizeof(unsigned long long));
-	bool *tab,*done;
-	unsigned *list;
-	#pragma omp parallel private(i,j,k,u,v,w,val,tab,hist_p,done,list,n)
+	bool *tab;
+	unsigned *list,*inter;
+	#pragma omp parallel private(i,j,k,u,v,w,val,tab,hist_p,inter,list,n)
 	{
 	hist_p=calloc(10,sizeof(unsigned long long));
 	tab=calloc(g->n,sizeof(bool));
-	done=calloc(g->n,sizeof(bool));
 	list=malloc(g->n*sizeof(unsigned));
+	inter=calloc(g->n,sizeof(unsigned));
 
 	#pragma omp for schedule(dynamic, 1) nowait
 	for (u=0;u<g->n;u++){//embarrassingly parallel...
 		n=0;
 		for (i=g->cd_i[u];i<g->cd_i[u+1];i++){
-			tab[g->adj_i[i]]=1;
-		}
-		for (i=g->cd_i[u];i<g->cd_i[u+1];i++){
 			v=g->adj_i[i];
 			for (j=g->cd_o[v];j<g->cd_o[v+1];j++){
 				w=g->adj_o[j];
-				if (w>u && done[w]==0){//make sure that (u,w) is processed only once
-					done[w]=1;
-					list[n++]=w;
-					val=0.;
-					for (k=g->cd_i[w];k<g->cd_i[w+1];k++){
-						if (tab[g->adj_i[k]]==1){
-							val++;
-						}
+				if (w>u){//make sure that (u,w) is processed only once
+					if(tab[w]==0){
+						list[n++]=w;
+						tab[w]=1;
 					}
-					val/=sqrt(((double)(g->cd_i[u+1]-g->cd_i[u]))*((double)(g->cd_i[w+1]-g->cd_i[w])));
-					if (val>0.9){
-						hist_p[9]++;
-					}
-					else {
-						hist_p[(int)(floor(val*10))]++;
-					}
+					inter[w]++;
 					//printf("%u %u %le\n",u,w,val);//to print the pairs and similarity
 				}
 			}
 		}
-		for (i=g->cd_i[u];i<g->cd_i[u+1];i++){
-			tab[g->adj_i[i]]=0;
-		}
 		for (i=0;i<n;i++){
-			done[list[i]]=0;
+			w=list[i];
+			val=((double)inter[w])/sqrt(((double)(g->cd_i[u+1]-g->cd_i[u]))*((double)(g->cd_i[w+1]-g->cd_i[w])));
+			if (val>0.9){
+				hist_p[9]++;
+			}
+			else {
+				hist_p[(int)(floor(val*10))]++;
+			}
+			tab[w]=0;
+			inter[w]=0;
 		}
 	}
 	free(tab);
+	free(list);
+	free(inter);
 	#pragma omp critical
 	{
 		for (i=0;i<10;i++){
