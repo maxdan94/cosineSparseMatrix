@@ -46,7 +46,7 @@ Computing Adammic-Adar is also possible: https://it.wikipedia.org/wiki/Coefficie
 
 ## Performance:
 On a commodity machine using a single thread and without removing hubs' edges:
-- http://snap.stanford.edu/data/cit-Patents.html (16M edges): 30 seconds
+- http://snap.stanford.edu/data/cit-Patents.html (16M edges): 15 seconds
 - http://snap.stanford.edu/data/soc-LiveJournal1.html (69M edges): 15 minutes
 
 - http://konect.uni-koblenz.de/networks/twitter_mpi (1.4G edges):
