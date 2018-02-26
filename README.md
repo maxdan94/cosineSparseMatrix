@@ -31,7 +31,7 @@ If the program does not scale, because there are too many nodes with a very high
 - neti.txt is the input directed graph: "source target" on each line. node's IDs should be integer, preferably from 0 to n-1.
 - neto.txt is the output directed graph: (with links to hubs removed).
 
-The program will be faster if the input graph has small out-degrees. Indeed, the running time is in $O(\sum_{u\in V}d^o(u)^2)$.
+The program will be faster if the input graph has small out-degrees. Indeed, the running time is in $O(\sum_{u\in V} d^o(u)^2)$.
 
 ## Modification:
 
