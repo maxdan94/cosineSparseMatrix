@@ -215,7 +215,13 @@ int main(int argc,char** argv){
 	printf("Number of nodes: %u\n",g->n);
 	printf("Number of edges: %u\n",g->e);
 
+	printf("Building Digraph\n");
+
 	mkdigraph(g);
+
+	t2=time(NULL);
+	printf("- Time = %ldh%ldm%lds\n",(t2-t1)/3600,((t2-t1)%3600)/60,((t2-t1)%60));
+	t1=t2;
 
 	printf("Computing cosine similarities\n");
 
