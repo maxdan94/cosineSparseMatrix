@@ -31,6 +31,8 @@ If the program does not scale, because there are too many nodes with a very high
 - neti.txt is the input directed graph: "source target" on each line. node's IDs should be integer, preferably from 0 to n-1.
 - neto.txt is the output directed graph: (with links to hubs removed).
 
+The program will be faster if the input graph has small out-degrees. Indeed, the running time is in $O(\sum_{u\in V}d^o(u)^2)$.
+
 ## Modification:
 
 The code can be modified to obtain any other wished output, such as each pair of nodes with the similarity larger than a threshold (the output consisting of all pairs of nodes with nonzero similarity might be too large and not so useful).
