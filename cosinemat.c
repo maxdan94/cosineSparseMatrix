@@ -41,6 +41,19 @@ unsigned max3(unsigned a,unsigned b,unsigned c){
 	return (a>c) ? a : c;
 }
 
+//used in qsort
+int cmpfunc(void const *a, void const *b){
+	edge const *pa = a;
+	edge const *pb = b;
+	if ((*pa).s<(*pb).s)
+		return 1;
+	if ((*pa).s>(*pb).s)
+		return -1;
+	if ((*pa).t<(*pb).t)
+		return 1;
+	return -1;
+}
+
 //reading the edgelist from file
 digraph* readedgelist(char* edgelist){
 	unsigned e1=NLINKS;
@@ -61,6 +74,8 @@ digraph* readedgelist(char* edgelist){
 	fclose(file);
 	g->n++;
 	g->edges=realloc(g->edges,g->e*sizeof(edge));
+
+	qsort(g->edges,g->e,sizeof(edge),cmpfunc);
 
 	return g;
 }
@@ -139,14 +154,15 @@ unsigned long long* cosine(digraph *g){
 			v=g->adj_i[i];
 			for (j=g->cd_o[v];j<g->cd_o[v+1];j++){
 				w=g->adj_o[j];
-				if (w>u){//make sure that (u,w) is processed only once
-					if(tab[w]==0){
-						list[n++]=w;
-						tab[w]=1;
-					}
-					inter[w]++;
-					//printf("%u %u %le\n",u,w,val);//to print the pairs and similarity
+				if (w==u){//make sure that (u,w) is processed only once (out-neighbors of u are sorted in increasing order)
+					break;
 				}
+				if(tab[w]==0){
+					list[n++]=w;
+					tab[w]=1;
+				}
+				inter[w]++;
+				//printf("%u %u %le\n",u,w,val);//to print the pairs and similarity
 			}
 		}
 		for (i=0;i<n;i++){
