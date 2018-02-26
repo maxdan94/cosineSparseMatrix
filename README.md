@@ -31,6 +31,8 @@ If the program does not scale, because there are too many nodes with a very high
 - neti.txt is the input directed graph: "source target" on each line. node's IDs should be integer, preferably from 0 to n-1.
 - neto.txt is the output directed graph: (with links to hubs removed).
 
+The program will be faster if the input graph has small out-degrees. Indeed, the running time is in $O(\sum_{u\in V} d^o(u)^2)$.
+
 ## Modification:
 
 The code can be modified to obtain any other wished output, such as each pair of nodes with the similarity larger than a threshold (the output consisting of all pairs of nodes with nonzero similarity might be too large and not so useful).
@@ -46,10 +48,10 @@ Computing Adammic-Adar is also possible: https://it.wikipedia.org/wiki/Coefficie
 
 ## Performance:
 On a commodity machine using a single thread and without removing hubs' edges:
-- http://snap.stanford.edu/data/cit-Patents.html (16M edges): 30 seconds
-- http://snap.stanford.edu/data/soc-LiveJournal1.html (69M edges): 15 minutes
+- http://snap.stanford.edu/data/cit-Patents.html (16M edges): 15 seconds
+- http://snap.stanford.edu/data/soc-LiveJournal1.html (69M edges): 2 minutes
 
-- http://konect.uni-koblenz.de/networks/twitter_mpi (1.4G edges):
+- http://konect.uni-koblenz.de/networks/twitter_mpi (1.9G edges):
 - http://konect.uni-koblenz.de/networks/friendster (2.5G edges):
 
 ## Reference:
