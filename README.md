@@ -63,7 +63,7 @@ Note that the degree of parallelism is very good: if 10 threads are used then th
 The program is an alternative to the MapReduce method presented in "When hashes met wedges: A distributed algorithm for finding high similarity vectors. Sharma, Seshadhri and Goel. WWW2017".  
 https://papers-gamma.link/paper/23
 
-The program shows that a "smart" brute-force approach is relatively scalable for this problem. The only problem being the RAM: it does not scale if the input graph does not fit in RAM (i.e., if a 2 integers for each edge in the graph cannot be stored in RAM).
+The program shows that a "smart" brute-force approach is relatively scalable for this problem. The only problem being the RAM: it does not scale if the input graph does not fit in RAM (i.e., if 2 integers for each edge in the graph cannot be stored in RAM).
  
 Graph compression à la Boldi-Vigna could be a solution: http://law.di.unimi.it/datasets.php
 
