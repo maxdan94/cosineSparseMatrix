@@ -154,7 +154,7 @@ unsigned long long* cosine(digraph *g){
 			v=g->adj_i[i];
 			for (j=g->cd_o[v];j<g->cd_o[v+1];j++){
 				w=g->adj_o[j];
-				if (w==u){//make sure that (u,w) is processed only once (out-neighbors of u are sorted in increasing order)
+				if (w==u){//make sure that (u,w) is processed only once (out-neighbors of u are sorted)
 					break;
 				}
 				if(tab[w]==0){
@@ -162,12 +162,12 @@ unsigned long long* cosine(digraph *g){
 					tab[w]=1;
 				}
 				inter[w]++;
-				//printf("%u %u %le\n",u,w,val);//to print the pairs and similarity
 			}
 		}
 		for (i=0;i<n;i++){
 			w=list[i];
 			val=((double)inter[w])/sqrt(((double)(g->cd_i[u+1]-g->cd_i[u]))*((double)(g->cd_i[w+1]-g->cd_i[w])));
+			//printf("%u %u %le\n",u,w,val);//to print the pair of nodes and the similarity
 			if (val>0.9){
 				hist_p[9]++;
 			}
