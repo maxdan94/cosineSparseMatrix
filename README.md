@@ -4,7 +4,7 @@ This C program computes the cosine similarity between each pair of nodes in a ve
 
 The cosine similarity between nodes $u$ and $v$ is defined as  
 $$\frac{|\Delta^i(u) \cap \Delta^i(v)|}{\sqrt{|\Delta^i(u)|\cdot |\Delta^i(v)|}},$$  
-where $|\Delta^i(u)|$ is the set of in-neighbors of node u.
+where $|\Delta^i(u)|$ is the set of in-neighbors of node u (in Twitter, that would be the set of followers of $u$).
 
 In practice, the program is quite scalable as it avoids to compute the cosine similarity between pairs of nodes having no in-neighbors in common. 
 
