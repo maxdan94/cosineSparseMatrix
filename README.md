@@ -6,7 +6,7 @@ The cosine similarity between nodes $u$ and $v$ is defined as
 $$\frac{|\Delta^i(u) \cap \Delta^i(v)|}{\sqrt{|\Delta^i(u)|\cdot |\Delta^i(v)|}},$$  
 where $|\Delta^i(u)|$ is the set of in-neighbors of node u (in Twitter, that would be the set of followers of $u$).
 
-In practice, the program is quite scalable as it avoids to compute the cosine similarity between pairs of nodes having no in-neighbors in common. 
+In practice, the program is quite scalable as it avoids to compute the cosine similarity between pairs of nodes having no in-neighbors in common. Some graphs with billions of edges can be processed.
 
 The method is particularly adapted to compute the "similarity" between users in a (directed) social network such as Twitter. It can then be used as a subroutine in a collaborative recommendation framework.
 
