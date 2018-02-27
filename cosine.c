@@ -15,24 +15,24 @@ gcc cosine.c -O9 -o cosine -lm -fopenmp
 #define NLINKS 500000000 //Maximum number of links, will automatically increase if needed.
 
 typedef struct {
-	unsigned s;
-	unsigned t;
-} edge;
+	unsigned s;//source
+	unsigned t;//target
+} edge;//directed edge
 
 typedef struct {
 	//edge list structure:
 	unsigned n;//number of nodes
 	unsigned e;//number of edges
-	edge *edges;//list of edges
+	edge *edges;//list of directed edges
 
 	//neighborhoods:
-	unsigned *d_o; //out degrees
+	unsigned *d_o; //out-degrees
 	unsigned *cd_o; //cumulative out-degrees: (start with 0) length=dim+1
 	unsigned *adj_o; //list of out-neighbors
-	unsigned *d_i; //in degrees
+	unsigned *d_i; //in-degrees
 	unsigned *cd_i; //cumulative in-degrees: (start with 0) length=dim+1
 	unsigned *adj_i; //list of in-neighbors
-} digraph;
+} digraph;//directed graph
 
 
 //compute the maximum of three unsigned
