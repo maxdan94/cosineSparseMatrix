@@ -51,6 +51,8 @@ On a commodity machine using a single thread and without removing hubs' edges:
 - http://snap.stanford.edu/data/cit-Patents.html (16M edges): 15 seconds
 - http://snap.stanford.edu/data/soc-LiveJournal1.html (69M edges): 2 minutes
 
+On a commodity cluster (Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz) using a single thread and without removing hubs' edges:
+
 - http://konect.uni-koblenz.de/networks/twitter_mpi (1.9G edges (<40G of RAM needed)): 72 hours; 1,655,243,811,234 non-zero similarity values
 - http://konect.uni-koblenz.de/networks/friendster (2.5G edges (<50G of RAM needed)): 48 hours; 420,903,466,824 non-zero similarity values
 
