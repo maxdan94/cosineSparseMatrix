@@ -54,7 +54,7 @@ On a commodity machine using a single thread and without removing hubs' edges:
 On a commodity cluster (Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz) using a single thread and without removing hubs' edges:
 - http://konect.uni-koblenz.de/networks/friendster (2.5G edges (<50G of RAM needed)): 50 hours and 420,903,466,824 non-zero similarity values
 - http://konect.uni-koblenz.de/networks/twitter_mpi (1.9G edges (<40G of RAM needed)): 70 hours and 1,655,243,811,234 non-zero similarity values  
-The maximum out-degree in twitter_mpi is 779,958. If "rmhub" is used to reduce this maximum out-degree to 10,000, we have (1.8G edges): 40 hours and 424,030,646,878 non-zero similarity values
+The maximum out-degree in twitter_mpi is 779,958. If "rmhub" is used to reduce this maximum out-degree to 10,000, we have (1.8G edges): 50 hours and 424,030,646,878 non-zero similarity values
 
 Note that the degree of parallelism is very good: if 10 threads are used then the running time is divided by 10.
 
