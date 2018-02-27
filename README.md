@@ -54,12 +54,9 @@ On a commodity machine using a single thread and without removing hubs' edges:
 On a commodity cluster (Intel(R) Xeon(R) CPU E5-4617 0 @ 2.90GHz) using a single thread and without removing hubs' edges:
 
 - http://konect.uni-koblenz.de/networks/twitter_mpi (1.9G edges (<40G of RAM needed)): 72 hours; 1,655,243,811,234 non-zero similarity values
-- http://konect.uni-koblenz.de/networks/friendster (2.5G edges (<50G of RAM needed)): 48 hours; 420,903,466,824 non-zero similarity values
-
-Note that the degree of parallelism is nearly optimal. For instance, with 10 threads it approximately takes 8 hours on twitter_mpi and 5 hours on friendster.
-
-The maximum outdegree in twitter_mpi is 779,958. If we use "rmhub" to uperbound this outdegree by 10,000, we have:
-- http://konect.uni-koblenz.de/networks/twitter_mpi with max_out-degree=10000 (1.9G edges (<40G of RAM needed)): 
+- http://konect.uni-koblenz.de/networks/friendster (2.5G edges (<50G of RAM needed)): 48 hours; 420,903,466,824 non-zero similarity values  
+The maximum outdegree in twitter_mpi is 779,958. If "rmhub" is used to reduce this maximum outdegree to 10,000, we have (1.8G edges):
+ 
 
 ## Reference:
 
