@@ -11,7 +11,7 @@ In practice, the program is quite scalable as it avoids to compute the cosine si
 The method is particularly adapted to compute the "similarity" between users in a (directed) social network such as Twitter. It can then be used as a subroutine in a collaborative recommendation framework.
 
 ## To compile:
-type "Make", or type
+type "make", or type
 - gcc cosine.c -O3 -o cosine -lm -fopenmp 
 - gcc rmhub.c -O3 -o rmhub
 
@@ -43,7 +43,7 @@ Such as:
 - Jaccard: $\frac{|\Delta^i(u)\cap \Delta^i(v)|}{|\Delta^i(u)\cup \Delta^i(v)|}$
 - F1: $2\cdot \frac{|\Delta^i(u)\cap \Delta^i(v)|}{|\Delta^i(u)|+|\Delta^i(v)|}$
 
-Computing Adammic-Adar is also possible: https://it.wikipedia.org/wiki/Coefficiente_Adamic/Adar
+Computing Adamic-Adar is also possible: https://it.wikipedia.org/wiki/Coefficiente_Adamic/Adar
 
 
 ## Performance:
